@@ -43,9 +43,9 @@ function makeGraphs(error, recordsJson) {
 	var maxDate = dateDim.top(1)[0]["date"];
 
 
-    //Charts
-    var numberRecordsND = dc.numberDisplay("#number-records-nd");
-    var averageSale = dc.numberDisplay("#average-sale-nd");
+	//Charts
+	var numberRecordsND = dc.numberDisplay("#number-records-nd");
+	var averageSale = dc.numberDisplay("#average-sale-nd");
 	var timeChart = dc.barChart("#time-chart");
 	var bedroomChart = dc.rowChart("#bedroom-row-chart");
 	var zipChart = dc.rowChart("#zip-row-chart");
@@ -102,25 +102,25 @@ function makeGraphs(error, recordsJson) {
 	bedroomChart
 		.width(375)
 		.height(150)
-        .dimension(bedroomsDim)
-        .group(bedroomsGroup)
-        .colors(['#6baed6'])
-        .elasticX(true)
-        .labelOffsetY(10)
-        .xAxis().ticks(5);
+		.dimension(bedroomsDim)
+		.group(bedroomsGroup)
+		.colors(['#6baed6'])
+		.elasticX(true)
+		.labelOffsetY(10)
+		.xAxis().ticks(5);
 
 	zipChart
     	.width(350)
 		.height(385)
-        .dimension(zipDim)
-        .group(zipGroup)
-        .ordering(function(d) { return -d.value })
-        .colors(['#6baed6'])
-        .elasticX(true)
-        .labelOffsetY(10)
+		.dimension(zipDim)
+		.group(zipGroup)
+		.ordering(function(d) { return -d.value })
+		.colors(['#6baed6'])
+		.elasticX(true)
+		.labelOffsetY(10)
 		.rowsCap(15)
 		.othersGrouper(false)
-        .xAxis().ticks(4);
+		.xAxis().ticks(4);
 
 
     var map = L.map('map');
